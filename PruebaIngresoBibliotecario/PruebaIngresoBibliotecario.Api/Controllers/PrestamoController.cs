@@ -38,7 +38,7 @@ namespace PruebaIngresoBibliotecario.Api.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(200, Type = typeof(PrestamoReseponseDto))]
+        [ProducesResponseType(200, Type = typeof(PrestamoResponseDto))]
         public async Task<IActionResult> PostAsync([FromBody] PrestamoRequestDto prestamo)
         {
             if(!Enum.IsDefined(typeof(TipoUsuarioEnum), prestamo.TipoUsuario))

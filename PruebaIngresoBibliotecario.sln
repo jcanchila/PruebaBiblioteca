@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaIngresoBibliotecario.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaIngresoBibliotecario.Api.Tests", "PruebaIngresoBibliotecario\PruebaIngresoBibliotecario.Api.Tests\PruebaIngresoBibliotecario.Api.Tests.csproj", "{1098EFDF-6E71-42AB-B02C-EE86D21BC08F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaIngresoBibliotecario.Domain", "PruebaIngresoBibliotecario\PruebaIngresoBibliotecario.Domain\PruebaIngresoBibliotecario.Domain.csproj", "{E6B59921-65F0-4BDF-944C-B941314FA5B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaIngresoBibliotecario.Domain", "PruebaIngresoBibliotecario\PruebaIngresoBibliotecario.Domain\PruebaIngresoBibliotecario.Domain.csproj", "{E6B59921-65F0-4BDF-944C-B941314FA5B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaIngresoBibliotecario.Infrastructure", "PruebaIngresoBibliotecario\PruebaIngresoBibliotecario.Infrastructure\PruebaIngresoBibliotecario.Infrastructure.csproj", "{614F7E76-8892-4FCA-A6C4-DE983A3438EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaIngresoBibliotecario.Infrastructure", "PruebaIngresoBibliotecario\PruebaIngresoBibliotecario.Infrastructure\PruebaIngresoBibliotecario.Infrastructure.csproj", "{614F7E76-8892-4FCA-A6C4-DE983A3438EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebaIngresoBibliotecario.Domain.Tests", "PruebaIngresoBibliotecario\PruebaIngresoBibliotecario.Domain.Tests\PruebaIngresoBibliotecario.Domain.Tests.csproj", "{009D5BC5-E710-4CAA-8AA4-71B996FEABCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{614F7E76-8892-4FCA-A6C4-DE983A3438EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{614F7E76-8892-4FCA-A6C4-DE983A3438EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{614F7E76-8892-4FCA-A6C4-DE983A3438EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{009D5BC5-E710-4CAA-8AA4-71B996FEABCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{009D5BC5-E710-4CAA-8AA4-71B996FEABCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{009D5BC5-E710-4CAA-8AA4-71B996FEABCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{009D5BC5-E710-4CAA-8AA4-71B996FEABCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

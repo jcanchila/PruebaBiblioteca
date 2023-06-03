@@ -2,7 +2,7 @@
 
 namespace PruebaIngresoBibliotecario.Domain.DTO.Response
 {
-    public class PrestamoReseponseDto
+    public class PrestamoResponseDto
     {
         /// <summary>
         /// Identificador unico del libro

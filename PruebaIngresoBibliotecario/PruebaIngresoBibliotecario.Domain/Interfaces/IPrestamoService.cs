@@ -9,10 +9,10 @@ namespace PruebaIngresoBibliotecario.Domain.Interfaces
 {
     public interface IPrestamoService
     {
-        Task<PrestamoReseponseDto> RealizarPrestamoAsync(PrestamoRequestDto prestamo);
+        Task<PrestamoResponseDto> RealizarPrestamoAsync(PrestamoRequestDto prestamo);
 
         Task<bool> EsValidoPrestamoAsync(PrestamoRequestDto prestamo);
 
-        Task<IEnumerable<PrestamoEntity>> ConsultarPrestamo(Guid? idPrestamo = null);
+        Task<IEnumerable<PrestamoEntity>> ConsultarPrestamo(Guid idPrestamo);
     }
 }

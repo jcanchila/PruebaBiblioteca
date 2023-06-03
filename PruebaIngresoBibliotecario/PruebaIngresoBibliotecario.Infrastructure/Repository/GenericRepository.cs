@@ -2,12 +2,14 @@
 using PruebaIngresoBibliotecario.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace PruebaIngresoBibliotecario.Infrastructure.Repository
 {
+    [ExcludeFromCodeCoverage]
     public sealed class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly PersistenceContext _context;        

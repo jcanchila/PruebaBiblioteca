@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Net;
 
 namespace PruebaIngresoBibliotecario.Api.Filters
 {
+    [ExcludeFromCodeCoverage]
     public class BibliotecaExceptionFilter : ExceptionFilterAttribute
     {
         private readonly ILogger _logger;

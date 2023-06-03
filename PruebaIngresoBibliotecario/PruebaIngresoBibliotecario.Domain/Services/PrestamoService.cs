@@ -19,9 +19,9 @@ namespace PruebaIngresoBibliotecario.Domain.Services
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
 
-        public async Task<IEnumerable<PrestamoEntity>> ConsultarPrestamo(Guid? idPrestamo = null)
+        public async Task<IEnumerable<PrestamoEntity>> ConsultarPrestamo(Guid idPrestamo)
         {            
-            return await _repository.GetAsync(x => x.Id.Equals(idPrestamo.Value)).ConfigureAwait(false);
+            return await _repository.GetAsync(x => x.Id.Equals(idPrestamo)).ConfigureAwait(false);
         }
 
         public async Task<bool> EsValidoPrestamoAsync(PrestamoRequestDto prestamo)
@@ -40,7 +40,7 @@ namespace PruebaIngresoBibliotecario.Domain.Services
             return true;
         }
 
-        public async Task<PrestamoReseponseDto> RealizarPrestamoAsync(PrestamoRequestDto prestamo)
+        public async Task<PrestamoResponseDto> RealizarPrestamoAsync(PrestamoRequestDto prestamo)
         {
             var prestamoEntity = new PrestamoEntity
             {
@@ -51,7 +51,7 @@ namespace PruebaIngresoBibliotecario.Domain.Services
 
             prestamoEntity.FechaMaximaDevolucion = CalcularFechaEntrega(prestamoEntity.TipoUsuario);
             await _repository.PostAsync(prestamoEntity);
-            PrestamoReseponseDto response = new PrestamoReseponseDto
+            PrestamoResponseDto response = new PrestamoResponseDto
             {
                 Id = prestamoEntity.Id,
                 FechaMaximaDevolucion = prestamoEntity.FechaMaximaDevolucion
