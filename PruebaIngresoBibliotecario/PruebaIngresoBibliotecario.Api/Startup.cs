@@ -6,8 +6,11 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
-
-
+using PruebaIngresoBibliotecario.Infrastructure;
+using PruebaIngresoBibliotecario.Domain.Interfaces;
+using PruebaIngresoBibliotecario.Infrastructure.Repository;
+using PruebaIngresoBibliotecario.Domain.Services;
+using PruebaIngresoBibliotecario.Api.Filters;
 
 namespace PruebaIngresoBibliotecario.Api
 {
@@ -24,18 +27,21 @@ namespace PruebaIngresoBibliotecario.Api
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
-        {
-
+        {            
             services.AddSwaggerDocument();
 
-            services.AddDbContext<Infrastructure.PersistenceContext>(opt =>
+            services.AddDbContext<PersistenceContext>(opt =>
             {
                 opt.UseInMemoryDatabase("PruebaIngreso");
             });
 
             services.AddControllers(mvcOpts =>
             {
+                mvcOpts.Filters.Add(typeof(BibliotecaExceptionFilter));
             });
+          
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<IPrestamoService, PrestamoService>();
 
         }
 
@@ -50,6 +56,8 @@ namespace PruebaIngresoBibliotecario.Api
 
             app.UseHttpsRedirection();
             app.UseRouting();
+
+            app.SeedDataBase();
 
             app.UseEndpoints(endpoints =>
             {
