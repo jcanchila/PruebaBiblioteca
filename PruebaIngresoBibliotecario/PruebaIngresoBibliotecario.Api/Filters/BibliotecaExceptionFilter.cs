@@ -24,7 +24,7 @@ namespace PruebaIngresoBibliotecario.Api.Filters
                 TypeError = context.Exception.GetType().ToString()
             };
 
-            context.HttpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+            context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
             context.Result = new ObjectResult(error);
         }
     }
